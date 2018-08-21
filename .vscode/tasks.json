@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "babelify",
+            "type": "shell",
+            "command":"${workspaceRoot}/node_modules/.bin/babel",
+            "windows": {
+                "command": "${workspaceRoot}/node_modules/.bin/babel"
+            },
+            "args": [
+                "DataStructures",
+                 "--out-dir",
+                 "dist",
+                 "--source-maps"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            }
+        },
+        {
+            "label": "babelify-watch",
+            "type": "shell",
+            "command":"${workspaceRoot}/node_modules/.bin/babel",
+            "windows": {
+                "command": "${workspaceRoot}/node_modules/.bin/babel"
+            },
+            "args": [
+                "DataStructures",
+                 "--out-dir",
+                 "dist",
+                 "--watch",
+                 "--source-maps"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "isBackground": true
+        }
+    ]
+}
