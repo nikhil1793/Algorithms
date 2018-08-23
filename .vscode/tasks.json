@@ -4,9 +4,13 @@
         {
             "label": "babelify",
             "type": "shell",
-            "command":"${workspaceRoot}/node_modules/.bin/babel",
+            /// if babel is installed in project only
+            //"command":"${workspaceRoot}/node_modules/.bin/babel", 
+            /// if babel is installed globbally == npm install babel-cli -g
+            "command":"babel",
             "windows": {
-                "command": "${workspaceRoot}/node_modules/.bin/babel"
+                //"command": "${workspaceRoot}/node_modules/.bin/babel"
+                "command": "babel"
             },
             "args": [
                 "DataStructures",
@@ -16,7 +20,11 @@
             ],
             "options": {
                 "cwd": "${workspaceRoot}"
-            }
+            },
+            "problemMatcher":[
+                "$eslint-compact",
+                "$eslint-stylish"
+            ]
         },
         {
             "label": "babelify-watch",
@@ -35,7 +43,11 @@
             "options": {
                 "cwd": "${workspaceRoot}"
             },
-            "isBackground": true
+            "isBackground": true,
+            "problemMatcher":[
+                "$eslint-compact",
+                "$eslint-stylish"
+            ]
         }
     ]
 }
